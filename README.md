@@ -8,6 +8,7 @@
 
 
 # Структура проекта
+```bash
 netStalker/
 ├── CMakeLists.txt
 ├── Dockerfile
@@ -41,7 +42,7 @@ netStalker/
 │   │   └── test.cpp
 │   └── integration/
 └── scripts/                   # Вспомогательные скрипты
-
+```
 
 1)Сборка production образа:
     docker build -t netstalker:latest .
