@@ -5,10 +5,10 @@
 #include <chrono>
 // для работы с потоками
 #include <thread>
-#include "../include/Network/networkAtack.h"
-#include "../include/Network/networkInfo.h"
-#include "../include/Network/stressTest.h"
-#include "../include/Network/configNetwork.h"
+#include "../include/network/networkAttack.h"
+#include "../include/network/networkInfo.h"
+#include "../include/network/stressTest.h"
+#include "../include/network/configNetwork.h"
 using namespace networkAtack;
 using namespace networkInfo;
 using namespace stressTest;

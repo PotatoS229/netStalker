@@ -1,4 +1,4 @@
-#include "../../include/Network/stressTest.h"
+#include "../../include/network/stressTest.h"
 
 namespace stressTest{
     void testing::testNetwork(){

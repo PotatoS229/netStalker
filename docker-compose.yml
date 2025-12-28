@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  netstalker:
+    build:
+      context: .
+      target: runtime
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=production
+      - LOG_LEVEL=info
+    volumes:
+      - ./data:/opt/netstalker/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - netstalker-network
+
+  netstalker-dev:
+    build:
+      context: .
+      target: development
+    ports:
+      - "8080:8080"
+      - "9229:9229" # Для отладки Node.js
+    volumes:
+      - .:/app
+      - netstalker-node-modules:/app/web/node_modules
+    environment:
+      - NODE_ENV=development
+    stdin_open: true
+    tty: true
+    networks:
+      - netstalker-network
+
+networks:
+  netstalker-network:
+    driver: bridge
+
+volumes:
+  netstalker-node-modules:

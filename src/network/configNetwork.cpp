@@ -1,4 +1,4 @@
-#include "../../include/Network/configNetwork.h"
+#include "../../include/network/configNetwork.h"
 
 namespace configNetwork{
     void configuration::configure(){

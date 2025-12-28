@@ -1,4 +1,4 @@
-#include "../../include/Network/networkAtack.h"
+#include "../../include/network/networkAttack.h"
 using namespace std;
 namespace networkAtack{
     //вывод в консоль существующих атак 
