@@ -44,13 +44,13 @@ netStalker/
 └── scripts/                   # Вспомогательные скрипты
 ```
 
-1)Сборка production образа:
+*1)Сборка production образа:
     docker build -t netstalker:latest .
-2)Сборка development образа:
+*2)Сборка development образа:
     docker build --target development -t netstalker-dev:latest .
-3)Запуск через Docker Compose:
+*3)Запуск через Docker Compose:
     docker-compose up -d
-4)Запуск development окружения:
+*4)Запуск development окружения:
     make run-dev
-5)Запуск production окружения:
+*5)Запуск production окружения:
     make run
