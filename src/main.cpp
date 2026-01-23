@@ -20,6 +20,7 @@ using namespace std::this_thread;
 
 // объявляем функцию для выбора действия
 void choosingOption();
+void launchOptions();
 
 int main() {;
     const string WHITE_TEXT = "\033[37m";
@@ -58,9 +59,45 @@ int main() {;
     sleep_for(3s);
     
     // Запускаем Функцию выбора действий
-    choosingOption();
+    launchOptions();
     return 0;
 }
+
+//Функция, где запускать программу TUI или GUI
+void launchOptions(){
+    while(true){
+        // Очистка экрана (работает на большинстве систем)
+        #ifdef _WIN32
+            system("cls");
+        #else
+            system("clear");
+        #endif
+        int option;
+        cout << left
+            << "\033[93m----------------------------------------------------------------------------------------------\033[0m" << endl
+            << "\033[101m|💻Запуск TUI|           |🌐Запуск GUI|\033[0m" << endl
+            << "\033[102m|      1     |           |     2      |\033[0m" << endl
+            << "\033[93m----------------------------------------------------------------------------------------------\033[0m" << endl;
+        if (!(cin >> option)) {
+                cin.clear(); // очищаем флаги ошибок
+                cin.ignore(numeric_limits<streamsize>::max(), '\n'); // игнорируем неправильный ввод
+                cout << "Invalid input! Please enter a number." << endl;
+                sleep_for(2s);
+                continue;
+        }
+        switch (option) {
+            case 1:
+                choosingOption();
+            case 2:
+                cout << "Запускаем сервера и GUI" << endl;
+            default:
+                cout << "Invalid option! Please choose again." << endl;
+                sleep_for(2s);
+                break;
+        }
+    }
+}
+
 
 // Функция для выбора действия
 void choosingOption() {
