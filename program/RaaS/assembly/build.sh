@@ -1,3 +1,4 @@
+cd ../
 g++ -I./include \
     -o PROJECT \
     src/main.cpp \

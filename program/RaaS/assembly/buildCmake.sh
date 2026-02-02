@@ -1,3 +1,4 @@
+cd ../
 mkdir build && cd build
 
 # 3. Конфигурация с CMake
