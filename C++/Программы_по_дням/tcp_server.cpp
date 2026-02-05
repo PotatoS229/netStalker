@@ -16,5 +16,6 @@ int main(){
     при создаении требуется указать домен - то есть пространство в котором будит рабоатьт сокет 
     у нас это IPv4, тип то есть как у нас будет происходить работа, а так же протакоол в нашем случае это TCP*/
     int server_socket = socket(AF_INET, SOCK_STREAM , IPPROTO_TCP);
-    cout << server_socket << endl;
+    cout << server_socket << endl; //server_socket возвращает нам дескриптор 
+    
 }
